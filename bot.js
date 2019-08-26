@@ -6,19 +6,19 @@ var botID = process.env.BOT_ID;
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
       botRegex = /^\/cool guy$/;
-  console.log('1');
-  console.log(request);
-  console.log('2');
-  console.log(this.req.chunks[0]);
-  console.log('3');
-  console.log(/^\/cool guy$/);
-  console.log('4');
-  console.log(request.text);
-  console.log('5');
+//   console.log('1');
+//   console.log(request);
+//   console.log('2');
+//   console.log(this.req.chunks[0]);
+//   console.log('3');
+//   console.log(/^\/cool guy$/);
+//   console.log('4');
+//   console.log(request.text);
+//   console.log('5');
 
-  if(request.text && botRegex.test(request.text)) {
+  if(request.text.length != request.text.replace('/cool','').length) {
     this.res.writeHead(200);
-    postMessage();
+    postMessage(request.text);
     this.res.end();
   } else {
     console.log("don't care");
@@ -27,13 +27,13 @@ function respond() {
   }
 }
 
-function postMessage() {
+function postMessage(text) {
   var botResponse, options, body, botReq;
   
   console.log('logs');
-  botResponse = 'test';
-  console.log(botResponse);
-  botResponse = cool();
+//   botResponse = 'test';
+//   console.log(botResponse);
+  botResponse = text.replace('/','');
   console.log(botResponse);
   console.log('logs');
 
