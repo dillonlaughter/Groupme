@@ -21,7 +21,7 @@ function respond() {
 function postMessage() {
   var botResponse, options, body, botReq;
 
-  botResponse = JSON.parse(this.req.chunks[0]).text;
+  botResponse = "test"
 
   options = {
     hostname: 'api.groupme.com',
