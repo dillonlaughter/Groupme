@@ -22,7 +22,11 @@ function postMessage() {
   var botResponse, options, body, botReq;
 
   botResponse = cool();
+  console.log('logs');
+  console.log(request);
+  console.log(request.text);
   console.log(botResponse);
+  console.log('logs');
 
   options = {
     hostname: 'api.groupme.com',
